@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Containers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search_containers.each do |search_container| %>
+      <tr>
+        <td><%= link_to 'Show', search_container %></td>
+        <td><%= link_to 'Edit', edit_search_container_path(search_container) %></td>
+        <td><%= link_to 'Destroy', search_container, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Search Container', new_search_container_path %>

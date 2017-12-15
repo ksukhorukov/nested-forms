@@ -1,0 +1,17 @@
+<%= form_with(model: search_container, local: true) do |form| %>
+  <% if search_container.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(search_container.errors.count, "error") %> prohibited this search_container from being saved:</h2>
+
+      <ul>
+      <% search_container.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

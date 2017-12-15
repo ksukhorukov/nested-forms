@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Categories</h1>
+
+
+<% @search_categories.each do |search_category| %>
+<ul>
+  <li>
+    <%= search_category.id %>
+    <%= search_category.title %>
+  </li>
+  <ul>
+    <% search_category.search_containers.each do |container| %>
+      <li>
+        <%= container.title %>
+        <ul>
+          <% container.search_items.each do |item| %>
+            <%= item.title %><br />
+            <%= item.product.try(:title) %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</ul>
+<% end %>
+<br>
+
+<%= link_to 'New Search Category', new_search_category_path %>

@@ -1,0 +1,2 @@
+module SearchContainerHelper
+end
