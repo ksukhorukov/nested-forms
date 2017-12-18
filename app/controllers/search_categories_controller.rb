@@ -19,10 +19,12 @@ class SearchCategoriesController < ApplicationController
       container = @search_category.search_containers.build 
       4.times { container.search_items.build }
     end
+    @products = Product.all
   end
 
   # GET /search_categories/1/edit
   def edit
+    @products = Product.all
   end
 
   # POST /search_categories
