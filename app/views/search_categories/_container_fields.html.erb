@@ -1,9 +1,11 @@
-<p>
+<div class="fields">
   <%= f.label :title, "Question" %>
   <%= f.text_field :title %>
-  <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove Question" %>
-</p>
-<%= f.fields_for :search_items do |builder| %>
-  <%= render 'item_fields', f: builder %>
-<% end %>
+  <%= f.hidden_field :_destroy %>
+  <%= remove_link "remove", "question" %>
+  <p>
+  <%= f.fields_for :search_items do |builder| %>
+    <%= render 'item_fields', f: builder %>
+  <% end %>
+  </p>
+</div>

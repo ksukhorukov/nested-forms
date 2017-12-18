@@ -1,7 +1,7 @@
-  <p>
+  <p class="fields">
     <%= f.label :title, "Title" %>
     <%= f.text_field :title %>
     <%= f.collection_select(:product_id, @products, :id, :title) %>
-    <%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "Remove item" %>
+    <%= f.hidden_field :_destroy %>
+    <%= remove_link "remove", "item" %>
   </p>
