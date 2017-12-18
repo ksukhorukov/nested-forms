@@ -5,7 +5,8 @@
   <%= remove_link "remove", "question" %>
   <p>
   <%= f.fields_for :search_items do |builder| %>
-    <%= render 'item_fields', f: builder %>
+    <%= render 'search_item_fields', f: builder %>
   <% end %>
   </p>
+  <p><%= link_to_add_fields "Add Item", f, :search_items %></p>
 </div>

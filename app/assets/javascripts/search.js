@@ -12,7 +12,22 @@ $( document ).ready(function() {
     $(this).parent().hide();
     console.log($(this));
   })
+
+  $('.link_to_add_fields').click(function(e){
+        e.preventDefault();
+        var link = $(this);
+        var association = $(this).data("association");
+        var content = $(this).data("content");
+        add_fields(link, association, content);
+  });
 });
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().before(content.replace(regexp, new_id));
+}
+
 
   // function remove_fields(link) {
   //   $(link).preventDefault();
